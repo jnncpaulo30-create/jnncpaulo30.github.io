@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONFESSION</title>
+  <meta name="description" content="A sincere message—shared honestly and gently." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#f8fafc;
+      --bg2:#fff1f2;
+      --text:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --accent:#ef4444;
+      --ring:#fca5a5;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%, var(--bg2), transparent 60%),
+        linear-gradient(180deg, var(--bg1), #ffffff 60%);
+    }
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+    }
+    .card{
+      width:100%;
+      max-width:780px;
+      background:var(--card);
+      border-radius:24px;
+      box-shadow:
+        0 40px 80px rgba(15,23,42,0.12),
+        0 8px 20px rgba(15,23,42,0.06);
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,0.06);
+    }
+    .header{
+      padding:36px 32px 20px;
+      background:linear-gradient(135deg, #fff7ed 0%, #fee2e2 55%, #fafafa 100%);
+      border-bottom:1px solid rgba(15,23,42,0.06);
+    }
+    .title{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size:clamp(28px, 5vw, 42px);
+      letter-spacing:1px;
+      color:#111827;
+    }
+    .subtitle{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .content{
+      padding:28px 32px 32px;
+      line-height:1.75;
+      font-size:18px;
+    }
+    .content p{
+      margin:0 0 18px;
+    }
+    .note{
+      margin-top:24px;
+      padding:14px 16px;
+      background:#fff7ed;
+      border:1px dashed rgba(239, 68, 68, 0.35);
+      border-radius:14px;
+      color:#7c2d12;
+      font-size:15px;
+    }
+    .footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 24px;
+      border-top:1px solid rgba(15,23,42,0.06);
+      background:#fafafa;
+    }
+    .sig{
+      color:#334155;
+      font-size:14px;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    button{
+      appearance:none;
+      border:none;
+      border-radius:999px;
+      padding:10px 16px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      transition:transform .04s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .primary{
+      background:var(--accent);
+      color:white;
+      box-shadow:0 6px 16px rgba(239, 68, 68, 0.25);
+    }
+    .primary:hover{transform:translateY(-1px)}
+    .secondary{
+      background:white;
+      color:#1f2937;
+      border:1px solid rgba(15,23,42,0.1);
+    }
+    .secondary:hover{transform:translateY(-1px)}
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:24px;
+      transform:translateX(-50%);
+      background:#0f172a;
+      color:white;
+      padding:10px 14px;
+      font-size:14px;
+      border-radius:10px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.25);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s ease, transform .25s ease;
+    }
+    .toast.show{
+      opacity:1;
+      transform:translateX(-50%) translateY(-4px);
+    }
+    @media (prefers-color-scheme: dark){
+      body{background:linear-gradient(180deg, #0b1220, #0f172a 60%)}
+      .card{background:#0b1220; border-color:rgba(255,255,255,0.06)}
+      .header{background:linear-gradient(135deg, #111827 0%, #1f2937 55%, #0b1220 100%); border-color:rgba(255,255,255,0.06)}
+      .title{color:#e5e7eb}
+      .subtitle{color:#cbd5e1}
+      .content{color:#e5e7eb}
+      .note{background:#111827; color:#fde68a; border-color:rgba(250,204,21,0.35)}
+      .footer{background:#0f172a; border-color:rgba(255,255,255,0.06)}
+      .sig{color:#cbd5e1}
+      .secondary{background:#0b1220; color:#e5e7eb; border-color:rgba(255,255,255,0.1)}
+      .toast{background:#111827}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card" aria-label="Confession card">
+      <header class="header">
+        <h1 class="title">CONFESSION</h1>
+        <p class="subtitle">Shared with sincerity and respect.</p>
+      </header>
+
+      <section class="content">
+        <p>Hi rics, this is the first time na magcoconfess ako sa isang tao na gusto ko and i think eto na rin yung last hahaha. Gusto kita since entrep groupings. I started to like u nung nagsasama na tayo as a group, nung una sobrang naamaze lang ako sa pagiging hard working student mo at the same time pagseserve mo din kay God, and then hindi ko na namalayan na nahulog na pala ako sayo.</p>
+        <p>Sobrang cringe ik hahaha ito pala yung feeling maexcite sa taong unexpected kong magugustuhan. l know that you only see me as a friend or maybe just ur blockmate and i’m okay with that, really I am. I never said anything kase ayokong maging awkward or put any pressure on you. I am confessing to let you know about what and how I feel about you, Hindi naman din ako nageexpect ng anything from you, and I respect whatever and whoever na nagpapasaya sayo.</p>
+        <p>Being friends is enough, If it’s the only way para mapalapit parin sayo. I'm not taking advantage of anything this is just honestly how i feel. You’ve just been someone I genuinely care about, and gusto ko lang maging honest about that. Also no need to worry, wala naman magbabago satin unless you want them to.</p>
+        <p>Anyways, I'm not attending to church just to see u kase ang mindset ko na kabaligtaran ng nakikita ng iba is ikaw yung ginagamit ni Lord sakin para mapalapit ulit ako sakaniya and sobrang thankful din ako sayo dahil don.</p>
+
+        <div class="note" role="note">
+          This is shared without expectations. Your comfort matters, and friendship is welcome.
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="sig">— shared privately</div>
+        <div class="actions">
+          <button class="primary" id="copyBtn">Copy message</button>
+          <button class="secondary" id="shareBtn">Share</button>
+        </div>
+      </footer>
+    </article>
+  </main>
+
+  <div class="toast" id="toast">Copied to clipboard</div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const shareBtn = document.getElementById('shareBtn');
+    const toast = document.getElementById('toast');
+
+    const messageText = `Hi rics, this is the first time na magcoconfess ako sa isang tao na gusto ko and i think eto na rin yung last hahaha. Gusto kita since entrep groupings. I started to like u nung nagsasama na tayo as a group, nung una sobrang naamaze lang ako sa pagiging hard working student mo at the same time pagseserve mo din kay God, and then hindi ko na namalayan na nahulog na pala ako sayo.
+
+Sobrang cringe ik hahaha ito pala yung feeling maexcite sa taong unexpected kong magugustuhan. l know that you only see me as a friend or maybe just ur blockmate and i’m okay with that, really I am. I never said anything kase ayokong maging awkward or put any pressure on you. I am confessing to let you know about what and how I feel about you, Hindi naman din ako nageexpect ng anything from you, and I respect whatever and whoever na nagpapasaya sayo.
+
+Being friends is enough, If it’s the only way para mapalapit parin sayo. I'm not taking advantage of anything this is just honestly how i feel. You’ve just been someone I genuinely care about, and gusto ko lang maging honest about that. Also no need to worry, wala naman magbabago satin unless you want them to.
+
+Anyways, I'm not attending to church just to see u kase ang mindset ko na kabaligtaran ng nakikita ng iba is ikaw yung ginagamit ni Lord sakin para mapalapit ulit ako sakaniya and sobrang thankful din ako sayo dahil don.`;
+
+    function showToast() {
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1600);
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(messageText);
+        showToast();
+      } catch (e) {
+        alert('Copy not available on this device.');
+      }
+    });
+
+    shareBtn.addEventListener('click', async () => {
+      const shareData = {
+        title: 'CONFESSION',
+        text: messageText,
+        url: location.href
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (e) {}
+      } else {
+        alert('Sharing is not supported here. You can copy the message instead.');
+      }
+    });
+  </script>
+</body>
+</html>
